@@ -7,11 +7,15 @@ package com.prog02.cuentas;
 import com.prog02.cuentas.CCuenta;
 
 /**
- *
  * @author Angel FV
+ * @version 1.0
  */
 public class Practica_ED04 {
 
+    /**
+    * Metodo main Se crea la cuenta y se llama al metodo de realizar las operaciones sobre ella
+    * @param args  public static void main(String[] args)                    ^
+    */
     public static void main(String[] args) {
         CCuenta cuenta1;
       
@@ -20,7 +24,12 @@ public class Practica_ED04 {
               
         operativa_cuenta(cuenta1, 100d);
     }
-
+    
+    /**
+    * Metodo operativa_cuenta para realizar las operaciones sobre una cuenta 
+    * @param cuenta1 la cuenta sobre la que operar
+    * @param cantidad la cantidad a ingresar y la cantidad a retirar
+    */
     public static void operativa_cuenta(CCuenta cuenta1, double cantidad) {
         double saldoActual;
         saldoActual = cuenta1.estado();
@@ -30,6 +39,7 @@ public class Practica_ED04 {
         } catch (Exception e) {
             System.out.print("Fallo al retirar");
         }
+        
         try {
             System.out.println("Ingreso en cuenta");
             cuenta1.ingresar(cantidad);

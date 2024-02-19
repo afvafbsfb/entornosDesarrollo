@@ -5,11 +5,21 @@
 package com.prog02.cuentas;
 
 /**
- *
- * @author Angel FV
+ * Clase cuenta 
+ * 
+ * Contiene información de cada cuenta
+ * 
+ * @author Angel 
+ * @version 1.0 
  */
 public class CCuenta {
-
+/**
+ * propiedades de CCuenta:
+ * nombre  nombre de la cuenta
+ * cuenta  numero de la cuenta
+ * saldo  saldo de la cuenta
+ * tipoInterés  tipo de interes aplicado en la cuenta
+ */
     private String nombre;
     private String cuenta;
     private double saldo;
@@ -70,11 +80,13 @@ public class CCuenta {
         this.tipoInterés = tipoInterés;
     }
 
-
-    public CCuenta()
-    {
-    }
-
+    /**
+     * Constructor Cuenta
+     * @param nom the nombreCuenta to set
+     * @param cue the numeroCuenta to set
+     * @param sal the saldoCuenta to set
+     * @param tipo the tipoInteresCuenta to set
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -82,18 +94,32 @@ public class CCuenta {
         saldo=sal;
     }
 
+     /**
+     * @return the saldo
+     */
     public double estado()
     {
         return getSaldo();
     }
 
+    /**
+    * Metodo ingresar saldo en la cuenta. 
+    * @param cantidad la cantidad a ingresar
+    * @throws java.lang.Exception  mensaje al usuario en caso de que la cantidad a ingresar sea menor a 0 
+    */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
-
+    
+    /**
+    * Metodo retirar. 
+    * @param cantidad la cantidad a retirar
+    * @throws java.lang.Exception mensaje al usuario en caso de que la cantidad a retirar sea menor/igual a 0 
+    * o mayor que el sado de la cuenta
+    */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
